@@ -8,7 +8,6 @@ public class StatsService {
             if (sales[i] < sales[minSale]) {
                 minSale = i;
             }
-
         }
         return minSale + 1;
     }
@@ -19,7 +18,6 @@ public class StatsService {
             if (sales[i] > sales[maxSale]) {
                 maxSale = i;
             }
-
         }
         return maxSale + 1;
     }
@@ -33,21 +31,15 @@ public class StatsService {
     }
 
     public int avrSum(int[] sales) {
-        int avrSum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            avrSum = avrSum + sales[i];
-        }
+        int avrSum = sum(sales);
+
         return avrSum/sales.length;
     }
 
     public int lesAvr(int[] sales) {
-        int avrSum = 0;
+        int avrSum = avrSum(sales);
         int mThatLess = 0;
-        for (int i = 0; i < sales.length; i++) {
-            avrSum = avrSum + sales[i];
-        }
-        avrSum = avrSum/sales.length;
-
+        
         for (int i =0; i < sales.length; i++){
             if (sales[i]<avrSum) mThatLess++;
         }
@@ -55,12 +47,8 @@ public class StatsService {
     }
 
     public int morAvr(int[] sales) {
-        int avrSum = 0;
+        int avrSum = avrSum(sales);
         int mThatMore = 0;
-        for (int i = 0; i < sales.length; i++){
-            avrSum = avrSum + sales[i];
-        }
-        avrSum = avrSum/sales.length;
 
         for (int i =0; i < sales.length; i++){
             if (sales[i]>avrSum) mThatMore++;
