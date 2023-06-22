@@ -33,15 +33,15 @@ public class StatsService {
     public int avrSum(int[] sales) {
         int avrSum = sum(sales);
 
-        return avrSum/sales.length;
+        return avrSum / sales.length;
     }
 
     public int lesAvr(int[] sales) {
         int avrSum = avrSum(sales);
         int mThatLess = 0;
-        
-        for (int i =0; i < sales.length; i++){
-            if (sales[i]<avrSum) mThatLess++;
+
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < avrSum) mThatLess++;
         }
         return mThatLess;
     }
@@ -50,8 +50,8 @@ public class StatsService {
         int avrSum = avrSum(sales);
         int mThatMore = 0;
 
-        for (int i =0; i < sales.length; i++){
-            if (sales[i]>avrSum) mThatMore++;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > avrSum) mThatMore++;
         }
         return mThatMore;
     }
